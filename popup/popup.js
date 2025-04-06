@@ -2,12 +2,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const inputText = document.getElementById('input-text');
     const convertButton = document.getElementById('convert-button');
     const responseText = document.getElementById('response-text');
-    // const version = document.getElementById('version');
 
-    // version.innerText = chrome.runtime.getManifest().version;
     inputText.focus();
 
-    // Auto-fill selected code from tab
     chrome.tabs.query({ currentWindow: true, active: true }, (tabs) => {
         chrome.scripting.executeScript({
             target: { tabId: tabs[0].id },
